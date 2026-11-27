@@ -17,7 +17,7 @@ void afficher_etudiant(etudiant e){
     printf("nom de l'etudiant : %s \n", e.nom);
     printf("prenom de l'etudiant : %s \n", e.prenom);
     printf("age de l'etudiant : %d \n", e.age);
-    if (e.sexe==H){
+    if (e.sexe==M){
         printf("sexe de l'etudiant : Homme \n");
     }
     else {
@@ -31,7 +31,7 @@ Sexe saisir_sexe(){
     printf("\n sexe de l'etudiant (H/F) :");
     scanf(" %c", &c);
     if(c=='H'){
-        return H;
+        return M;
     }
     else if (c=='F'){
         return F;

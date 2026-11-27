@@ -3,7 +3,7 @@
 #define ETUDIANT_H
 
 typedef enum{
-    H='H',
+    M='M',
     F='F'    
 }Sexe;
 

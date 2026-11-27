@@ -12,7 +12,7 @@ typedef struct etudiant{
     char prenom[50];
     int age;
     Sexe sexe;
-    int notes[4];
+    int notes[5];
 } etudiant;
 
 void afficher_etudiant(etudiant e);

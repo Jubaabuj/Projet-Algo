@@ -8,9 +8,13 @@
 
 
 liste * creeNoeud(etudiant e){
-    liste * l;
+    liste * l= malloc(sizeof(liste));
+    if(l==NULL){
+        return NULL;
+    }
     l->suivant =NULL;
     l->e=e;
+    return l;
 }
 
 liste * ajouter_liste(liste * l, etudiant e){
@@ -56,7 +60,7 @@ int nombre_moyenne(liste * l, float val){
     return c;
 }
 
-liste * supprimer_etudiant(liste *l, int val){
+liste * supprimer_etudiant(liste *l, float val){
     if(l==NULL){
         return NULL;
     }
@@ -77,6 +81,46 @@ liste * supprimer_etudiant(liste *l, int val){
    tmp->suivant=tmp2->suivant;
    free(tmp2);
    return l;
-
 }
+
+void trier_liste(liste *l){
+    if(l==NULL || l->suivant==NULL){
+        return;
+    }
+    liste * ltmp;
+    etudiant tmp;
+    int i=1;
+    while(i!=0){
+        ltmp=l;
+        i=0;
+        while(ltmp->suivant!=NULL){
+            if(moyenne_etudiant(ltmp->e)>moyenne_etudiant(ltmp->suivant->e)){
+                tmp = ltmp->e;
+                ltmp->e=ltmp->suivant->e;
+                ltmp->suivant->e=tmp;
+                i++;
+            }
+        ltmp = ltmp->suivant;
+        }
+    }
+} 
+
+void afficher_liste_trie(liste *l){
+    trier_liste(l);
+    while (l!=NULL){
+        printf("-----------------------\n");
+        afficher_etudiant(l->e);
+        l=l->suivant;
+    }  
+}
+
+void detruire_liste(liste **l){
+    liste * tmp;
+    while(*l!=NULL){
+        tmp =(*l) ->suivant;
+        free(*l);
+        *l=tmp;
+    }
+}
+
 

@@ -15,5 +15,9 @@ typedef struct etudiant{
     int notes[5];
 } etudiant;
 
+
+float moyenne_etudiant(etudiant e);
 void afficher_etudiant(etudiant e);
+Sexe saisir_sexe();
+etudiant generer_etudiant();
  #endif

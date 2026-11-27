@@ -47,8 +47,6 @@ void generernom(char mot[]) {
     mot[taille] = '\0'; 
 }
 
-
-
 etudiant generer_etudiant(){
     etudiant e;
     Sexe sexe;

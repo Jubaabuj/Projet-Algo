@@ -4,7 +4,7 @@
 
 ## Étudiant A : socle + S1 (liste non triée)
 
-**Nom :** ______
+**Nom :** MOUSSAOUI Juba
 
 - **Code :**
   - `etudiant.h` / `etudiant.c` (struct, moyenne, génération aléatoire)
@@ -18,7 +18,7 @@
 
 ## Étudiant B : S2 (tableau trié) + menu
 
-**Nom :** ______
+**Nom :** MEDJEDOUB Chihab
 
 - **Code :**
   - tableau trié et insertion
@@ -33,7 +33,7 @@
 
 ## Étudiant C : S3 (arbre binaire de recherche)
 
-**Nom :** ______
+**Nom :** BELLIL Rayane
 
 - **Code :**
   - ABR et gestion des doublons
@@ -47,7 +47,7 @@
 
 ## Étudiant D : expérimentation
 
-**Nom :** ______
+**Nom :** MESSAOUDI Oussama
 
 - **Code :**
   - chronométrage avec `clock()` et répétitions

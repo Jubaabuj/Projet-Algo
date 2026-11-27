@@ -39,24 +39,24 @@ Sexe saisir_sexe(){
     return saisir_sexe();
 }
 
+void generernom(char mot[]) {
+    int taille =rand()%40 + 10;
+    for (int i=0; i<taille; i++) {
+        mot[i] ='A'+ rand()%26;
+    }  
+    mot[taille] = '\0'; 
+}
+
+
+
 etudiant generer_etudiant(){
     etudiant e;
-    char nom[50];
-    char prenom[50];
-    int age;
     Sexe sexe;
-    printf("\n nom de l'utilisateur : ");
-    scanf("%s", nom);
-    strcpy(e.nom,nom);
-    printf("\n prenom de l'utilisateur : ");
-    scanf("%s", prenom);
-    strcpy(e.prenom,prenom);
-    printf("\n age de l'utilisateur : ");
-    scanf("%d", &age);
-    e.age=age;
+    generernom(e.nom);
+    generernom(e.prenom);
+    e.age =rand()%20 +18;
     sexe=saisir_sexe();
     e.sexe=sexe;
-    srand(time(NULL));
     for(int i=0; i<5; i++){
         e.notes[i]=rand()%21;
     }

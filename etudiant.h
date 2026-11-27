@@ -19,5 +19,6 @@ typedef struct etudiant{
 float moyenne_etudiant(etudiant e);
 void afficher_etudiant(etudiant e);
 Sexe saisir_sexe();
+void generernom(char mot[]);
 etudiant generer_etudiant();
  #endif

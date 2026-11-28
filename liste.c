@@ -114,6 +114,41 @@ void afficher_liste_trie(liste *l){
     }  
 }
 
+void trier_liste_decroissant(liste *l){
+    if(l==NULL || l->suivant==NULL){
+        return;
+    }
+    liste * ltmp;
+    etudiant tmp;
+    int i=1;
+    while(i!=0){
+        ltmp=l;
+        i=0;
+        while(ltmp->suivant!=NULL){
+            if(moyenne_etudiant(ltmp->e)<moyenne_etudiant(ltmp->suivant->e)){
+                tmp = ltmp->e;
+                ltmp->e=ltmp->suivant->e;
+                ltmp->suivant->e=tmp;
+                i++;
+            }
+        ltmp = ltmp->suivant;
+        }
+    }
+} 
+
+void afficher_k_meilleur_etudiant(liste *l, int k){
+    if(l==NULL || k<=0){
+        return;
+    }
+    trier_liste_decroissant(l);
+    printf("classement des etudiant");
+    for(int i=0; i<k && l!=NULL; i++){
+       printf("%d : ", i+1);
+       afficher_etudiant(l->e);
+       l=l->suivant;
+    }
+}
+
 void detruire_liste(liste **l){
     liste * tmp;
     while(*l!=NULL){

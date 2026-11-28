@@ -16,6 +16,7 @@ liste * creeNoeud(etudiant e){
     l->e=e;
     return l;
 }
+// O(1)
 
 liste * ajouter_liste(liste * l, etudiant e){
     liste * new = creeNoeud(e);
@@ -32,6 +33,10 @@ liste * ajouter_liste(liste * l, etudiant e){
     tmp->suivant=new;
     return l;
 }
+/* meilleur cas : O(1) : la liste est vide
+   moyens cas : O(n)
+   pire cas : O(n)
+*/
 
 bool etudiant_existe_l(liste * l, float val){
     if(l== NULL){
@@ -45,6 +50,11 @@ bool etudiant_existe_l(liste * l, float val){
     }
     return false;
 }
+/*
+meilleur cas : si l'etudiant est au debut de la liste O(1)
+moyens cas : O(n)
+pire cas : si il parcours toute la liste O(n)
+*/
 
 int nombre_moyenne(liste * l, float val){
     if(l== NULL){
@@ -59,6 +69,11 @@ int nombre_moyenne(liste * l, float val){
     }
     return c;
 }
+/*
+meilleur cas : O(n)
+moyens cas : O(n)
+pire cas : O(n)
+*/
 
 liste * supprimer_etudiant(liste *l, float val){
     if(l==NULL){
@@ -82,6 +97,11 @@ liste * supprimer_etudiant(liste *l, float val){
    free(tmp2);
    return l;
 }
+/*
+meilleur cas : si l'etudiant est au debut de la liste O(1)
+moyens cas : O(n)
+pire cas : O(n)
+*/
 
 void trier_liste(liste *l){
     if(l==NULL || l->suivant==NULL){
@@ -104,6 +124,12 @@ void trier_liste(liste *l){
         }
     }
 } 
+/*
+meilleur cas : liste deja trie O(n)
+moyens cas : O(n²)
+pire cas : liste trie a l'envers O(n²)
+*/
+
 
 void afficher_liste_trie(liste *l){
     trier_liste(l);
@@ -113,6 +139,11 @@ void afficher_liste_trie(liste *l){
         l=l->suivant;
     }  
 }
+/*
+meilleur cas : liste deja trie O(n)
+moyens cas : O(n²)
+pire cas : liste trie a l'envers O(n²)
+*/
 
 void trier_liste_decroissant(liste *l){
     if(l==NULL || l->suivant==NULL){
@@ -134,7 +165,12 @@ void trier_liste_decroissant(liste *l){
         ltmp = ltmp->suivant;
         }
     }
-} 
+}
+/* 
+meilleur cas : liste deja trie O(n)
+moyens cas : O(n²)
+pire cas : liste trie a l'envers O(n²)
+*/
 
 void afficher_k_meilleur_etudiant(liste *l, int k){
     if(l==NULL || k<=0){
@@ -148,6 +184,11 @@ void afficher_k_meilleur_etudiant(liste *l, int k){
        l=l->suivant;
     }
 }
+/*
+meilleur cas : liste deja trie O(n)
+moyens cas : O(n²)
+pire cas : liste trie a l'envers O(n²)
+*/
 
 void detruire_liste(liste **l){
     liste * tmp;
@@ -157,5 +198,10 @@ void detruire_liste(liste **l){
         *l=tmp;
     }
 }
+/*
+meilleur cas : O(n)
+moyens cas : O(n)
+pire cas : O(n²)
+*/
 
 

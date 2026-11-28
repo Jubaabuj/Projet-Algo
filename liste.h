@@ -16,6 +16,7 @@ void afficher_liste_trie(liste *l);
 void trier_liste_decroissant(liste *l);
 void afficher_k_meilleur_etudiant(liste *l, int k);
 void detruire_liste(liste **l);
+liste *generer_liste_etudiant(liste *l, int n);
 
 
 #endif

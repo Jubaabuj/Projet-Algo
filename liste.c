@@ -201,7 +201,21 @@ void detruire_liste(liste **l){
 /*
 meilleur cas : O(n)
 moyens cas : O(n)
+pire cas : O(n)
+*/
+
+liste *generer_liste_etudiant(liste *l, int n){
+    while(n>0){
+        l=ajouter_liste(l ,generer_etudiant());
+        n--;
+    }     
+    return l;
+}
+/*
+meilleur cas : O(n)
+moyens cas : O(n²)
 pire cas : O(n²)
 */
+
 
 

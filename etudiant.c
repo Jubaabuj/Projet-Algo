@@ -53,8 +53,13 @@ etudiant generer_etudiant(){
     generernom(e.nom);
     generernom(e.prenom);
     e.age =rand()%20 +18;
-    sexe=saisir_sexe();
-    e.sexe=sexe;
+    int c=rand()%2;
+    if(c=0){
+       e.sexe=M;
+    }
+    else{
+        e.sexe=F;
+    }
     for(int i=0; i<5; i++){
         e.notes[i]=rand()%21;
     }
